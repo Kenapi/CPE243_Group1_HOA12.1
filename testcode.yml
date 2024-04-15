@@ -3,3 +3,7 @@
   tasks:
     - name: Ping all hosts
       ping:
+
+    - name: Display ping results
+      debug:
+        var: ansible_facts['previous_task']['stdout']
