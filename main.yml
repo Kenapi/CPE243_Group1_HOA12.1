@@ -138,16 +138,17 @@
     - name: Set a message of the day
       copy:
         dest: /etc/motd
-        src: /etc/motd
+        content: |
+          Welcome to Group's 1 Server!
+          Unauthorized access is prohibited..
         owner: root
         group: root
         mode: 0644
-        remote_src: yes
 
     - name: Set a login banner
       copy:
         dest: "{{ item }}"
-        src: etc/issue
+        src: /etc/issue
         owner: root
         group: root
         mode: 0644
